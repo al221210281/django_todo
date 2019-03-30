@@ -67,6 +67,8 @@ THIRD_PARTY_APPS = [
     "allauth.account",
     "allauth.socialaccount",
     "rest_framework",
+    "rest_framework.authtoken",
+    "djoser",
 ]
 LOCAL_APPS = [
     "todo_list.users.apps.UsersAppConfig",
@@ -232,5 +234,13 @@ ACCOUNT_ADAPTER = "todo_list.users.adapters.AccountAdapter"
 SOCIALACCOUNT_ADAPTER = "todo_list.users.adapters.SocialAccountAdapter"
 
 
-# Your stuff...
+# DRF
 # ------------------------------------------------------------------------------
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.AllowAny',
+    )
+}

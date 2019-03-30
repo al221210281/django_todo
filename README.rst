@@ -59,3 +59,15 @@ Agregar una nueva migración::
 Aplicar migraciones pendientes::
 
     $ docker-compose -f local.yml run --rm django python manage.py migrate
+
+Instalación de paquetes
+-----------------------
+
+Usando PIP
+^^^^^^^^^^
+
+1. Agregar el paquete a requirements/*.txt
+
+2. Ejecutar el comando build::
+
+    $ docker-compose -f local.yml build
